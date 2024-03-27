@@ -68,7 +68,7 @@ dF =@(n)Ft(n,5) - (Fw(ua(n,5)) + Ff); %驱动力与行驶阻力之差
 n1 = properties.nMin;
 n2 = properties.nMax;
 nAve = 0.5*(n1 + n2);
-while dF(nAve) > 1e-5
+while abs(dF(nAve)) > 1e-2
     nAve = 0.5*(n1 + n2);
     if dF(nAve) < 0
         n2 = nAve;
