@@ -7,7 +7,7 @@ properties.nMin = 600;     %发动机最低转速r/min
 properties.nMax = 4000;    %发动机最高转速r/min
 properties.mTotal = 3880;  %总质量kg
 properties.mCar = 1800;    %整车整备质量kg
-properties.nLoad = 2000;   %装载质量kg
+properties.mLoad = 2000;   %装载质量kg
 properties.r = 0.367;      %车轮半径m
 properties.yitaT = 0.85;   %传动系机械效率
 properties.f = 0.013;      %滚动阻力系数
@@ -38,7 +38,7 @@ for n = properties.nMin : properties.nMax
     for i = 1 : properties.gearbox            %i:变速器挡位
         %1. 计算每一个n与i下的驱动力Ft
         FtM(i,n-properties.nMin+1) = Ft(n,i);
-        %1. 计算每一个n与i下的车速ua
+        %2. 计算每一个n与i下的车速ua
         uaM(i,n-properties.nMin+1) = ua(n,i);
     end
 end
